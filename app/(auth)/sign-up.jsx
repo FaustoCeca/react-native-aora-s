@@ -5,6 +5,7 @@ import CustomButton from '../../components/CustomButton';
 import { Link } from 'expo-router';
 import { useState } from 'react';
 import { images } from '../../constants';
+import { createUser } from '../../lib/appwrite';
 
 const SignUp = () => {
   const [form, setForm] = useState({
@@ -12,10 +13,11 @@ const SignUp = () => {
     email: '',
     password: ''
   });
+
   const [loading, setLoading] = useState(false);
 
   const handleSubmit = () => {
-    console.log(form);
+    createUser();
   }
 
   return (
